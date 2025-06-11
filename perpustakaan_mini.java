@@ -9,7 +9,7 @@ public class perpustakaan_mini {
         String[] adminPassword = {"password123", "sipaling admin", "admin ke2", "admin magang"};
 
         System.out.println(" =======================================");
-        System.out.println(" ========== PERPUSTAKAAN MINI ==========");
+        System.out.println(" ==========  ==========");
         System.out.println(" =======================================");
         System.out.println();
         System.out.println("==== Silahkan login terlebih dahulu ====");
