@@ -13,11 +13,7 @@ public class perpustakaan_mini {
         boolean selesai = false;
 
         while (!selesai) {
-            System.out.println("===  ===");
-            System.out.println("1. Admin");
-            System.out.println("2. Pelanggan");
-            System.out.print("Pilih sebagai (1/2): ");
-            int pilihan = input.nextInt();
+            
             input.nextLine(); // membersihkan buffer
 
             if (pilihan == 1) {
