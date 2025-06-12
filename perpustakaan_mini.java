@@ -5,8 +5,8 @@ public class perpustakaan_mini {
         InputStreamReader isr = new InputStreamReader(System.in);
         BufferedReader br = new BufferedReader(isr);
 
-        String[] adminUsername = {"admin1", "JOKOWI", "admin2", "admin3"};
-        String[] adminPassword = {"password123", "HIDUP JOKOWI", "admin ke2", "admin magang"};
+        String[] adminUsername = {"admin1", "superuser", "admin2", "admin3", "admin4"};
+        String[] adminPassword = {"password123", "sipaling admin", "admin ke2", "admin magang", "admin resource"};
 
         // Tambahan untuk simpan data jurnal
         String[][] daftarJurnal = new String[100][4];
