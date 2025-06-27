@@ -212,8 +212,7 @@ public class perpustakaan_mini {
                         System.out.println("2. Tambah Daftar Jurnal");
                         System.out.println("3. Tambah Daftar Novel");
                         System.out.println("4. Tambah Daftar Komik");
-                        System.out.println("5. Lihat Status Tersedia/di pinjam");
-                        System.out.println("6. Keluar dari Menu Admin");
+                        System.out.println("5. Keluar dari Menu Admin");
                         System.out.print("Pilih opsi: ");
                         String adminChoice = input.readLine();
                         
@@ -292,9 +291,7 @@ public class perpustakaan_mini {
     
                                  
                                 break;
-                            case "5" : //NANTI GUA MAU NAMBAHIN INI KALO SEMPET, KALO GA SEMPET GUA SESUAI FLOWCHART AJA  
-                                       
-                            case "6":
+                            case "5":
                                 adminMenu = false;
                                 break;
                             default:
@@ -401,28 +398,51 @@ public class perpustakaan_mini {
                                             }
                                         }
                                         // untuk menampilkan judul buku terlebih dahulu
-                                        System.out.print("\nPilih nomor untuk melihat detail: "); 
-                                        int detailPilihan = Integer.parseInt(input.readLine()) - 1;
 
-                                        // ini menampilkan detail berdasarkan pilihan
-                                        if (detailPilihan >= 0 && detailPilihan < indeksSementara.size()) {
-                                            int indexasli = indeksSementara.get(detailPilihan);
-                                            System.out.println("============== Detail Buku ===============");
-                                            System.out.println("Judul        : " + daftarBuku[indexasli][2]);
-                                            System.out.println("Pengarang    : " + daftarBuku[indexasli][3]);
-                                            System.out.println("Penerbit     : " + daftarBuku[indexasli][4]);
-                                            System.out.println("Tahun Terbit : " + daftarBuku[indexasli][5]);
-                                            System.out.println("Status       : " + daftarBuku[indexasli][6]);
-                                            
-                                        } else if (detailPilihan >= 0 && detailPilihan < indeksSementara.size()) {
-                                            int indexasli = indeksSementara.get(detailPilihan);
-                                            System.out.println("============== Detail Buku ===============");
-                                            System.out.println("Judul        : " + daftarBuku[indexasli][2]);
-                                            System.out.println("Pengarang    : " + daftarBuku[indexasli][3]);
-                                            System.out.println("Penerbit     : " + daftarBuku[indexasli][4]);
-                                            System.out.println("Tahun Terbit : " + daftarBuku[indexasli][5]);
-                                            System.out.println("Status       : " + daftarBuku[indexasli][6]);
-        
+                                        if (kategoriPilihan == 0) {
+                                            ArrayList<Integer> indeksSementara = new ArrayList<>();
+                                            for (int k = 0; k < indexBuku; k++) {
+                                                if (daftarBuku[k][0].equals(subTema[kategoriPilihan][subTemaPilihan])) {
+                                                    System.out.println(indeksSementara.size() + 1 + ". " + daftarBuku[k][2]);
+                                                    indeksSementara.add(k);
+                                                }
+                                            }
+                                            System.out.print("\nPilih nomor untuk melihat detail: ");
+                                            int detailPilihan = Integer.parseInt(input.readLine()) - 1;
+                                            if (detailPilihan >= 0 && detailPilihan < indeksSementara.size()) {
+                                                int indexAsli = indeksSementara.get(detailPilihan);
+                                                System.out.println("\n=== Detail Buku ===");
+                                                System.out.println("Judul: " + daftarBuku[indexAsli][2]);
+                                                System.out.println("Pengarang: " + daftarBuku[indexAsli][3]);
+                                                System.out.println("Penerbit: " + daftarBuku[indexAsli][4]);
+                                                System.out.println("Tahun Terbit: " + daftarBuku[indexAsli][5]);
+                                                System.out.println("Status: " + daftarBuku[indexAsli][6]);
+                                            } else {
+                                                System.out.println("Pilihan tidak valid.");
+                                            }
+                                        } else if (kategoriPilihan == 1) {
+                                            ArrayList<Integer> indeksSementara = new ArrayList<>();
+                                            for (int k = 0; k < indexJurnal; k++) {
+                                                if (daftarJurnal[k][0].equals(subTema[kategoriPilihan][subTemaPilihan])) {
+                                                    System.out.println(indeksSementara.size() + 1 + ". " + daftarJurnal[k][2]);
+                                                    indeksSementara.add(k);
+                                                }
+                                            }
+                                            System.out.print("\nPilih nomor untuk melihat detail: ");
+                                            int detailPilihan = Integer.parseInt(input.readLine()) - 1;
+                                            if (detailPilihan >= 0 && detailPilihan < indeksSementara.size()) {
+                                                int indexAsli = indeksSementara.get(detailPilihan);
+                                                System.out.println("\n=== Detail Jurnal ===");
+                                                System.out.println("Judul: " + daftarJurnal[indexAsli][2]);
+                                                System.out.println("Pengarang: " + daftarJurnal[indexAsli][3]);
+                                                System.out.println("Penerbit: " + daftarJurnal[indexAsli][4]);
+                                                System.out.println("Tahun Terbit: " + daftarJurnal[indexAsli][5]);
+                                                System.out.println("Status: " + daftarJurnal[indexAsli][6]);
+                                            } else {
+                                                System.out.println("Pilihan tidak valid.");
+                                            }
+
+                                        
                                         } else {
                                             System.out.println("Pilihan tidak valid.");
                                         }
